@@ -50,4 +50,20 @@ public class Produto {
     public BigDecimal getPreco() {
         return preco;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", preco=" + preco +
+                ", dataCadastro=" + dataCadastro +
+                ", categoria=" + categoria +
+                '}';
+    }
 }

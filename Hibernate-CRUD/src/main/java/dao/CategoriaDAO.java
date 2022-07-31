@@ -15,4 +15,8 @@ public class CategoriaDAO {
     public void cadastrar(Categoria categoria) {
         entityManager.persist(categoria);
     }
+
+    public Categoria buscar(Integer id) {
+        return entityManager.find(Categoria.class, id);
+    }
 }
