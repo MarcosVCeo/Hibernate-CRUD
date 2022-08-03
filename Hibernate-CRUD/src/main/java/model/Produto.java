@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "produtos")
+@NamedQuery(name = "Produto.produtosPorCategoria", query = "SELECT p FROM Produto AS p WHERE p.categoria.nome = :nome")
 public class Produto {
 
     @Id
@@ -21,7 +22,7 @@ public class Produto {
     @Column(name = "data_cadastro")
     private LocalDateTime dataCadastro;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Categoria categoria;
 
     public Produto() {
